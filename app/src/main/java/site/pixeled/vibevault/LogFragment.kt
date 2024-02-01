@@ -5,11 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import site.pixeled.vibevault.models.MoodData
+import site.pixeled.vibevault.models.MoodEntry
 import site.pixeled.vibevault.types.MoodType
 import site.pixeled.vibevault.types.moods
+import java.util.Date
 
 class LogFragment : Fragment() {
 
@@ -35,7 +39,17 @@ class LogFragment : Fragment() {
             }
         }
 
+        val descriptionField = view.findViewById<EditText>(R.id.logDescription)
         view.findViewById<Button>(R.id.logSubmitButton).setOnClickListener {
+            mSelectedMood?.let {
+                MoodData.addEntry(
+                    MoodEntry(
+                        it,
+                        Date(),
+                        if (descriptionField.text.isEmpty()) null else descriptionField.text.toString()
+                    )
+                )
+            }
             Navigation.findNavController(view).popBackStack()
         }
 
