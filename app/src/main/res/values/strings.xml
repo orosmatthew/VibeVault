@@ -9,4 +9,6 @@
     <string name="mood_sad">:(</string>
     <string name="log_submit">Log</string>
     <string name="log_description_hint">(optional) Description</string>
+    <string name="welcome_name_hint">What is your name?</string>
+    <string name="welcome_submit">Let\'s Vibe!</string>
 </resources>

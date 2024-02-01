@@ -37,7 +37,8 @@
         android:text="@string/mood_happy"
         android:textSize="32sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialToolbar2" />
+        app:layout_constraintTop_toBottomOf="@+id/materialToolbar2"
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
     <Button
         android:id="@+id/logOkButton"
@@ -86,6 +87,7 @@
         android:gravity="start|top"
         android:hint="@string/log_description_hint"
         android:inputType="textMultiLine"
+        android:textColorHint="#546E7A"
         app:layout_constraintBottom_toTopOf="@+id/logSubmitButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"

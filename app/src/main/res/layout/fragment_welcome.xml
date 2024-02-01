@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WelcomeFragment" >
+    tools:context=".WelcomeFragment">
 
     <TextView
         android:id="@+id/textView"
@@ -24,9 +24,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="124dp"
+        android:autofillHints="name"
         android:ems="10"
-        android:hint="What is your Name?"
+        android:hint="@string/welcome_name_hint"
         android:inputType="text"
+        android:minHeight="48dp"
+        android:textColorHint="#546E7A"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +40,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
-        android:text="Let's Vibe!"
+        android:enabled="false"
+        android:text="@string/welcome_submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcomeNameField" />

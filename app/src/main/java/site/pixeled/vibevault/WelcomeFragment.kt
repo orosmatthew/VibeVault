@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.core.widget.addTextChangedListener
 import androidx.navigation.Navigation
 
 class WelcomeFragment : Fragment() {
@@ -22,16 +23,17 @@ class WelcomeFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_welcome, container, false)
 
-        view.findViewById<Button>(R.id.welcomeStartButton).setOnClickListener {
+        val submitButton = view.findViewById<Button>(R.id.welcomeStartButton)
+        view.findViewById<EditText>(R.id.welcomeNameField).addTextChangedListener { text ->
+            submitButton.isEnabled = !text.isNullOrEmpty()
+        }
+
+        submitButton.setOnClickListener {
             val name = view.findViewById<EditText>(R.id.welcomeNameField).text.toString()
-            if (name.isEmpty()) {
-                Toast.makeText(context, "Please enter your name", Toast.LENGTH_SHORT).show()
-            } else {
-                val bundle = Bundle()
-                bundle.putString("name", name)
-                Navigation.findNavController(view)
-                    .navigate(R.id.action_welcomeFragment_to_homeFragment, bundle)
-            }
+            val bundle = Bundle()
+            bundle.putString("name", name)
+            Navigation.findNavController(view)
+                .navigate(R.id.action_welcomeFragment_to_homeFragment, bundle)
         }
 
         return view
