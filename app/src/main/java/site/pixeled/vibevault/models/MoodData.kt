@@ -12,6 +12,10 @@ object MoodData : Iterable<MoodEntry> {
         mEntries.add(entry)
     }
 
+    fun entries(): List<MoodEntry> {
+        return mEntries
+    }
+
     override fun iterator(): Iterator<MoodEntry> {
         return mEntries.iterator()
     }
