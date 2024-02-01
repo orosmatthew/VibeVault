@@ -36,11 +36,4 @@ class WelcomeFragment : Fragment() {
 
         return view
     }
-
-    companion object {
-        @JvmStatic
-        fun newInstance() = WelcomeFragment().apply {
-            arguments = Bundle().apply {}
-        }
-    }
 }

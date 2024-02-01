@@ -9,7 +9,11 @@
         android:id="@+id/homeFragment"
         android:name="site.pixeled.vibevault.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_logFragment"
+            app:destination="@id/logFragment" />
+    </fragment>
     <fragment
         android:id="@+id/welcomeFragment"
         android:name="site.pixeled.vibevault.WelcomeFragment"
@@ -19,4 +23,9 @@
             android:id="@+id/action_welcomeFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/logFragment"
+        android:name="site.pixeled.vibevault.LogFragment"
+        android:label="fragment_log"
+        tools:layout="@layout/fragment_log" />
 </navigation>
