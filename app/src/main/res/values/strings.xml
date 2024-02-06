@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">VibeVault</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="log_mood">Log Mood</string>
     <string name="log_header">Log Mood</string>
     <string name="mood_happy">:)</string>
@@ -10,6 +9,5 @@
     <string name="log_description_hint">(optional) Description</string>
     <string name="welcome_name_hint">What is your name?</string>
     <string name="welcome_submit">Let\'s Vibe!</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="log_detail_delete">🗑️</string>
 </resources>
