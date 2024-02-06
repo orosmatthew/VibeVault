@@ -1,8 +1,11 @@
+<!--Light-->
 <resources>
-    <!-- Base application theme. -->
+
     <style name="Base.Theme.VibeVault" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:fontFamily">@font/amaranth</item>
+        <item name="colorPrimary">@color/primaryLight</item>
+        <item name="colorOnSurface">@color/primaryLightDisabled</item>
+        <item name="colorOnPrimary">@color/textDark</item>
     </style>
 
     <style name="Theme.VibeVault" parent="Base.Theme.VibeVault" />

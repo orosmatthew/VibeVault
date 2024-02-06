@@ -1,7 +1,10 @@
+<!--Dark-->
 <resources>
-    <!-- Base application theme. -->
+
     <style name="Base.Theme.VibeVault" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="android:fontFamily">@font/amaranth</item>
+        <item name="colorPrimary">@color/primaryDark</item>
+        <item name="colorOnSurface">@color/primaryDarkDisabled</item>
+        <item name="colorOnPrimary">@color/textDark</item>
     </style>
 </resources>

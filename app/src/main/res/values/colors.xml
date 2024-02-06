@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="white">#FFFFFFFF</color>
+    <color name="primaryLight">#072D5A</color>
+    <color name="primaryLightDisabled">#395872</color>
+    <color name="primaryDark">#195785</color>
+    <color name="primaryDarkDisabled">#54697C</color>
+    <color name="textDark">#B2D0E8</color>
 </resources>
