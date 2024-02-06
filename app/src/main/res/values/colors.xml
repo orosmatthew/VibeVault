@@ -6,4 +6,5 @@
     <color name="primaryDark">#195785</color>
     <color name="primaryDarkDisabled">#54697C</color>
     <color name="textDark">#B2D0E8</color>
+    <color name="primaryText">#FF8673</color>
 </resources>
