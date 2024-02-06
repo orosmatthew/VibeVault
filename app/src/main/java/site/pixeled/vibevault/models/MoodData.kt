@@ -12,6 +12,10 @@ object MoodData : Iterable<MoodEntry> {
         mEntries.add(entry)
     }
 
+    fun removeAt(index: Int) {
+        mEntries.removeAt(index)
+    }
+
     fun entries(): List<MoodEntry> {
         return mEntries
     }

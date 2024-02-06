@@ -22,7 +22,7 @@ class MoodListEntryFragment : Fragment() {
             val adapter = MoodListEntryRecyclerViewAdapter(MoodData.entries())
             adapter.setOnRowSelectListener { rowIndex ->
                 val bundle = Bundle()
-                bundle.putInt("rowIndex", rowIndex)
+                bundle.putInt("logIndex", rowIndex)
                 Navigation.findNavController(view)
                     .navigate(R.id.action_homeFragment_to_logDetailFragment, bundle)
             }
