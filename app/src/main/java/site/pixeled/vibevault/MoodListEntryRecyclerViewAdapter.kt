@@ -23,7 +23,7 @@ class MoodListEntryRecyclerViewAdapter(private val mMoodEntries: List<MoodEntry>
     }
 
     fun setOnRowSelectListener(listener: (rowIndex: Int) -> Unit) {
-        mOnRowSelectListener = listener;
+        mOnRowSelectListener = listener
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

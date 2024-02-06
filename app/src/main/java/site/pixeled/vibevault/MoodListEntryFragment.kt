@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import site.pixeled.vibevault.models.MoodData
@@ -20,7 +21,10 @@ class MoodListEntryFragment : Fragment() {
             view.layoutManager = LinearLayoutManager(context)
             val adapter = MoodListEntryRecyclerViewAdapter(MoodData.entries())
             adapter.setOnRowSelectListener { rowIndex ->
-                Toast.makeText(context, "Row Index: $rowIndex", Toast.LENGTH_SHORT).show()
+                val bundle = Bundle()
+                bundle.putInt("rowIndex", rowIndex)
+                Navigation.findNavController(view)
+                    .navigate(R.id.action_homeFragment_to_logDetailFragment, bundle)
             }
             view.adapter = adapter
         }

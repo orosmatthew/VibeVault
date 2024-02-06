@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_homeFragment_to_logFragment"
             app:destination="@id/logFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_logDetailFragment"
+            app:destination="@id/logDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/welcomeFragment"
@@ -27,4 +30,9 @@
         android:name="site.pixeled.vibevault.LogFragment"
         android:label="fragment_log"
         tools:layout="@layout/fragment_log" />
+    <fragment
+        android:id="@+id/logDetailFragment"
+        android:name="site.pixeled.vibevault.LogDetailFragment"
+        android:label="fragment_log_detail"
+        tools:layout="@layout/fragment_log_detail" />
 </navigation>

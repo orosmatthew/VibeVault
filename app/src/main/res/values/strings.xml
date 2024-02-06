@@ -10,4 +10,6 @@
     <string name="log_description_hint">(optional) Description</string>
     <string name="welcome_name_hint">What is your name?</string>
     <string name="welcome_submit">Let\'s Vibe!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
