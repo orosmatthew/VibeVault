@@ -13,3 +13,8 @@ val moods = arrayOf(
     Mood(MoodType.Ok, R.id.logOkButton, R.string.mood_ok),
     Mood(MoodType.Sad, R.id.logSadButton, R.string.mood_sad)
 )
+
+fun moodTypeStringId(moodType: MoodType): Int? {
+    val mood = moods.find { m -> m.type == moodType }
+    return mood?.stringId
+}

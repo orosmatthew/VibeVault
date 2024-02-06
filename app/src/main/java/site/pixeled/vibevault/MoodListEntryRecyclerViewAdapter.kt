@@ -6,11 +6,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import site.pixeled.vibevault.databinding.FragmentMoodListEntryBinding
 import site.pixeled.vibevault.models.MoodEntry
-import site.pixeled.vibevault.types.MoodType
-import java.util.Date
+import site.pixeled.vibevault.types.moodTypeStringId
 
 class MoodListEntryRecyclerViewAdapter(private val mMoodEntries: List<MoodEntry>) :
     RecyclerView.Adapter<MoodListEntryRecyclerViewAdapter.ViewHolder>() {
+
+    private var mOnRowSelectListener: ((rowIndex: Int) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -21,18 +22,31 @@ class MoodListEntryRecyclerViewAdapter(private val mMoodEntries: List<MoodEntry>
 
     }
 
+    fun setOnRowSelectListener(listener: (rowIndex: Int) -> Unit) {
+        mOnRowSelectListener = listener;
+    }
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val entry = mMoodEntries[position]
-        holder.idView.text = position.toString()
-        holder.contentView.text = entry.time.toString()
+        val moodStringId = moodTypeStringId(entry.type)
+        holder.moodView.text =
+            if (moodStringId != null) holder.itemView.context.getString(moodStringId) else "Unknown"
+        holder.dateView.text = entry.time.toString()
     }
+
 
     override fun getItemCount(): Int = mMoodEntries.size
 
     inner class ViewHolder(binding: FragmentMoodListEntryBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        val idView: TextView = binding.itemNumber
-        val contentView: TextView = binding.content
-    }
 
+        init {
+            binding.root.setOnClickListener {
+                mOnRowSelectListener?.invoke(layoutPosition)
+            }
+        }
+
+        val moodView: TextView = binding.moodListEntryMood
+        val dateView: TextView = binding.moodListEntryDate
+    }
 }
